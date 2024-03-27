@@ -1,0 +1,32 @@
+#Declare Maintenance Window (ie window where no applies are allowed)
+#Format#
+#Following format outline in RFC3339"
+#YYYY-MM-DDTHH:MM:SSZ or YYYY-MM-DDTHH:MM:SS+HH:MM (which includes a timezone offset)
+# 1. A PR can be raised to update the start and end maintanence window
+# 2. Once the PR is approved and merged, the policy set can be added to all workspaces
+# 3. This will prevent any applies that will be between the start and end maintenance window
+
+
+import "tfrun"
+import "time"
+import "decimal"
+
+start_maintenance = "2024-01-29T13:00:00-06:00"
+end_maintenance = "2024-01-29T15:00:00-06:00"
+
+start_maintenance_unix = time.load(start_maintenance)
+end_maintenance_unix = time.load(end_maintenance)
+tfrun_created_at = time.load(tfrun.created_at)
+
+print("tfrun_created_at", tfrun_created_at.month_name, tfrun_created_at.day, tfrun_created_at.year,"|", tfrun_created_at.hour, ":", tfrun_created_at.minute, ":", tfrun_created_at.second, ":", "zone", tfrun_created_at.zone )
+
+validated = true
+    if tfrun_created_at.after(start_maintenance) and tfrun_created_at.before(end_maintenance) {
+        print("Maintenance Window is in effect")
+      validated = false
+    } else { print("Maintenance Window is not in effect") }
+
+
+main = rule {
+    validated
+}
