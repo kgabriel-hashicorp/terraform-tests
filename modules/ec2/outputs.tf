@@ -26,7 +26,7 @@ output "instance_type" {
     aws_spot_instance_request.this[0].instance_type,
     null,
   )
-} 
+}
 output "capacity_reservation_specification" {
   description = "Capacity reservation specification of the instance"
   value = try(
