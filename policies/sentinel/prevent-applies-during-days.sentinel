@@ -1,0 +1,23 @@
+#Declare Maintenance Window using Days and specifying an org
+#Format#
+#1. The policy will check first if the org name is in the list of orgs scheduled for maintenance
+#2. If the org is within the list, the policy will check if the day of the week is within the list of days scheduled for maintenance
+#3. If it is at current run time (UTC) the day is a maintenance day, the sentinel policy will fail
+
+
+import "tfrun"
+import "time"
+
+param maintenance_days default ["Friday", "Saturday", "Sunday"]
+param organization_maintenance default ["Cloud-Operations"]
+
+tfrun_created_at = time.load(tfrun.created_at)
+tfrun_organization_name = tfrun.organization.name
+
+supported_maintenance_day = rule when tfrun_organization_name in organization_maintenance { 
+    tfrun_created_at.weekday_name in maintenance_days
+}
+
+main = rule {
+    not supported_maintenance_day
+}
