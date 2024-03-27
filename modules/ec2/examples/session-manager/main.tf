@@ -26,7 +26,7 @@ locals {
 
 module "ec2" {
   source = "../../"
-   
+
   name = local.name
 
   subnet_id              = element(module.vpc.intra_subnets, 0)
@@ -40,7 +40,7 @@ module "ec2" {
 
   tags = local.tags
 
-  
+
 }
 
 ################################################################################
