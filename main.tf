@@ -2,12 +2,7 @@
  * # Main title
  *
  * Everything in this comment block will get extracted.
- *
- my name is karla lalala
- lalala
-
- try again
- lala
+ * hello
  */
 
 
