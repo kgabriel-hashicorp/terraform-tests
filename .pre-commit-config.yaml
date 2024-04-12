@@ -1,6 +1,14 @@
+# repos:
+#   - repo: https://github.com/terraform-docs/terraform-docs
+#     rev: "v0.17.0"
+#     hooks:
+#       - id: terraform-docs-go
+#         args: ["--config", ".tfdocs-config.yml", "."] 
+
+
 repos:
   - repo: https://github.com/terraform-docs/terraform-docs
     rev: "v0.17.0"
     hooks:
       - id: terraform-docs-go
-        args: ["--config", ".tfdocs-config.yml", "."] 
+        args: ["--config", ".tfdocs-config.yml", "."]
