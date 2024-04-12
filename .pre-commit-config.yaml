@@ -6,9 +6,24 @@
 #         args: ["--config", ".tfdocs-config.yml", "."] 
 
 
+# repos:
+#   - repo: https://github.com/terraform-docs/terraform-docs
+#     rev: "v0.17.0"
+#     hooks:
+#       - id: terraform-docs-go
+#         args: ["--config", ".tfdocs-config.yml", "."]
+
+
 repos:
-  - repo: https://github.com/terraform-docs/terraform-docs
-    rev: "v0.17.0"
-    hooks:
-      - id: terraform-docs-go
-        args: ["--config", ".tfdocs-config.yml", "."]
+- repo: https://github.com/antonbabenko/pre-commit-terraform
+  rev: v1.88.4 # Get the latest from: https://github.com/antonbabenko/pre-commit-terraform/releases
+  hooks:
+    - id: terraform_fmt
+    - id: terraform_docs
+      args:
+        - --args=--config=.tfdocs-config.yml
+    # - id: terraform_validate
+    # - id: terraform_tflint
+    #   args:
+    #     - --args=--config=__GIT_WORKING_DIR__/.tflint.hcl
+    #     - --args=--color

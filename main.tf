@@ -19,7 +19,7 @@ data "aws_ami" "this" {
   }
 }
 
-resource "aws_instance" "this" {
+resource "aws_instan" "this" {
   ami = data.aws_ami.this.id
   instance_market_options {
     spot_options {

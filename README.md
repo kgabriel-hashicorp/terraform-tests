@@ -14,7 +14,7 @@ No requirements.
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.45.0 |
 
 ## Modules
 
@@ -24,7 +24,7 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [aws_instance.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance) | resource |
+| [aws_instan.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instan) | resource |
 | [aws_ami.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/ami) | data source |
 
 ## Inputs
