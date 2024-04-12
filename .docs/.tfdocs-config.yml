@@ -2,8 +2,8 @@ formatter: "markdown" # this is required
 
 version: ""
 
-header-from: .docs/header.md
-footer-from: .docs/footer.md
+header-from: "./header.md"
+footer-from: "./footer.md"
 
 recursive:
   enabled: false
