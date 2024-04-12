@@ -3,7 +3,7 @@ formatter: "markdown" # this is required
 version: ""
 
 header-from: "~/docs/.header.md"
-# footer-from: "docs/.footer.md"
+footer-from: "docs/.footer.md"
 
 recursive:
   enabled: false
