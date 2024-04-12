@@ -2,11 +2,11 @@ formatter: "markdown" # this is required
 
 version: ""
 
-header-from: main.tf
-footer-from: ""
+header-from: .docs/header.md
+footer-from: .docs/footer.md
 
 recursive:
-  enabled: true
+  enabled: false
 
 sections:
   hide: []
