@@ -44,7 +44,7 @@ run "create_elasticache_regional" {
 run "create_elasticache_global" {
 
   variables {
-    enable_global_cluster = true
+    enable_global_cluster        = true
     primary_replication_group_id = "test-primary-global-replication-group"
   }
 
@@ -53,7 +53,7 @@ run "create_elasticache_global" {
     error_message = "Global is using the wrong primary replication group"
   }
 
-    assert {
+  assert {
     condition     = (aws_elasticache_replication_group.secondary[0].global_replication_group_id == aws_elasticache_global_replication_group.global[0].global_replication_group_id) == true
     error_message = "Secondary is not using the correct global replication group"
   }

@@ -96,35 +96,35 @@ run "check_global_docdb_cluster" {
 
 run "check_instance_class_is_valid_primary" {
 
-    command = plan
+  command = plan
 
-    module {
-        source = "./tests/load"
-    }
+  module {
+    source = "./tests/load"
+  }
 
-    variables {
-        engine = run.check_global_docdb_cluster.engine
-        docdb_instance_class = run.check_global_docdb_cluster.primary_instance_class
-        region = run.check_global_docdb_cluster.primary_region
-        engine_version = run.check_global_docdb_cluster.engine_version
-    }
+  variables {
+    engine               = run.check_global_docdb_cluster.engine
+    docdb_instance_class = run.check_global_docdb_cluster.primary_instance_class
+    region               = run.check_global_docdb_cluster.primary_region
+    engine_version       = run.check_global_docdb_cluster.engine_version
+  }
 
 }
 
 run "check_instance_class_is_valid_secondary" {
 
-    command = plan
+  command = plan
 
-    module {
-        source = "./tests/load"
-    }
+  module {
+    source = "./tests/load"
+  }
 
-    variables {
-        engine = run.check_global_docdb_cluster.engine
-        docdb_instance_class = run.check_global_docdb_cluster.primary_instance_class
-        region = run.check_global_docdb_cluster.secondary_region
-        engine_version = run.check_global_docdb_cluster.engine_version
-    }
+  variables {
+    engine               = run.check_global_docdb_cluster.engine
+    docdb_instance_class = run.check_global_docdb_cluster.primary_instance_class
+    region               = run.check_global_docdb_cluster.secondary_region
+    engine_version       = run.check_global_docdb_cluster.engine_version
+  }
 
 }
 

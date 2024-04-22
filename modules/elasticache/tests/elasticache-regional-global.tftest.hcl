@@ -27,7 +27,7 @@ run "create_elasticache_regional" {
 run "create_elasticache_global" {
 
   variables {
-    enable_global_cluster = true
+    enable_global_cluster        = true
     primary_replication_group_id = "test-primary-global-replication-group"
   }
 
@@ -36,7 +36,7 @@ run "create_elasticache_global" {
     error_message = "Global is using the wrong primary replication group"
   }
 
-    assert {
+  assert {
     condition     = (aws_elasticache_replication_group.secondary[0].global_replication_group_id == aws_elasticache_global_replication_group.global[0].global_replication_group_id) == true
     error_message = "Secondary is not using the correct global replication group"
   }
@@ -46,42 +46,42 @@ run "create_elasticache_global" {
 #ends global 12:27:51
 #regional#
 # aws_elasticache_replication_group.primary will be created
-  // + resource "aws_elasticache_replication_group" "primary" {
-  //     + apply_immediately              = (known after apply)
-  //     + arn                            = (known after apply)
-  //     + at_rest_encryption_enabled     = (known after apply)
-  //     + auth_token_update_strategy     = "ROTATE"
-  //     + auto_minor_version_upgrade     = (known after apply)
-  //     + automatic_failover_enabled     = false
-  //     + cluster_enabled                = (known after apply)
-  //     + configuration_endpoint_address = (known after apply)
-  //     + data_tiering_enabled           = (known after apply)
-  //     + description                    = "primary replication group"
-  //     + engine                         = "redis"
-  //     + engine_version                 = "5.0.6"
-  //     + engine_version_actual          = (known after apply)
-  //     + global_replication_group_id    = (known after apply)
-  //     + id                             = (known after apply)
-  //     + ip_discovery                   = (known after apply)
-  //     + maintenance_window             = (known after apply)
-  //     + member_clusters                = (known after apply)
-  //     + multi_az_enabled               = false
-  //     + network_type                   = (known after apply)
-  //     + node_type                      = "cache.t3.micro"
-  //     + num_cache_clusters             = 1
-  //     + num_node_groups                = (known after apply)
-  //     + parameter_group_name           = (known after apply)
-  //     + primary_endpoint_address       = (known after apply)
-  //     + reader_endpoint_address        = (known after apply)
-  //     + replicas_per_node_group        = (known after apply)
-  //     + replication_group_id           = "test-regional-id"
-  //     + security_group_ids             = (known after apply)
-  //     + security_group_names           = (known after apply)
-  //     + snapshot_window                = (known after apply)
-  //     + subnet_group_name              = (known after apply)
-  //     + tags_all                       = (known after apply)
-  //     + transit_encryption_enabled     = (known after apply)
-  //   }
+// + resource "aws_elasticache_replication_group" "primary" {
+//     + apply_immediately              = (known after apply)
+//     + arn                            = (known after apply)
+//     + at_rest_encryption_enabled     = (known after apply)
+//     + auth_token_update_strategy     = "ROTATE"
+//     + auto_minor_version_upgrade     = (known after apply)
+//     + automatic_failover_enabled     = false
+//     + cluster_enabled                = (known after apply)
+//     + configuration_endpoint_address = (known after apply)
+//     + data_tiering_enabled           = (known after apply)
+//     + description                    = "primary replication group"
+//     + engine                         = "redis"
+//     + engine_version                 = "5.0.6"
+//     + engine_version_actual          = (known after apply)
+//     + global_replication_group_id    = (known after apply)
+//     + id                             = (known after apply)
+//     + ip_discovery                   = (known after apply)
+//     + maintenance_window             = (known after apply)
+//     + member_clusters                = (known after apply)
+//     + multi_az_enabled               = false
+//     + network_type                   = (known after apply)
+//     + node_type                      = "cache.t3.micro"
+//     + num_cache_clusters             = 1
+//     + num_node_groups                = (known after apply)
+//     + parameter_group_name           = (known after apply)
+//     + primary_endpoint_address       = (known after apply)
+//     + reader_endpoint_address        = (known after apply)
+//     + replicas_per_node_group        = (known after apply)
+//     + replication_group_id           = "test-regional-id"
+//     + security_group_ids             = (known after apply)
+//     + security_group_names           = (known after apply)
+//     + snapshot_window                = (known after apply)
+//     + subnet_group_name              = (known after apply)
+//     + tags_all                       = (known after apply)
+//     + transit_encryption_enabled     = (known after apply)
+//   }
 
 
 //  run "create_elasticache_global"... pass

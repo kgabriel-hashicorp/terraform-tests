@@ -15,6 +15,10 @@ $ terraform apply
 Note that this example may create resources which can cost money. Run `terraform destroy` when you don't need these resources.
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+README.md updated successfully
+<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
@@ -26,7 +30,7 @@ Note that this example may create resources which can cost money. Run `terraform
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 4.66 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.45.0 |
 
 ## Modules
 
@@ -122,4 +126,4 @@ No inputs.
 | <a name="output_spot_instance_availability_zone"></a> [spot\_instance\_availability\_zone](#output\_spot\_instance\_availability\_zone) | The availability zone of the created spot instance |
 | <a name="output_spot_instance_id"></a> [spot\_instance\_id](#output\_spot\_instance\_id) | The Instance ID (if any) that is currently fulfilling the Spot Instance request |
 | <a name="output_spot_request_state"></a> [spot\_request\_state](#output\_spot\_request\_state) | The current request state of the Spot Instance Request |
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- END_TF_DOCS -->
