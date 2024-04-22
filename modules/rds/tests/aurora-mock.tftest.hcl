@@ -13,7 +13,7 @@ override_resource {
 }
 
 override_resource {
-target = aws_rds_cluster.primary
+  target = aws_rds_cluster.primary
 }
 
 override_resource {
@@ -102,35 +102,35 @@ run "check_global_rds_cluster" {
 
 run "check_instance_class_is_valid_primary" {
 
-    command = plan
+  command = plan
 
-    module {
-        source = "./tests/load"
-    }
+  module {
+    source = "./tests/load"
+  }
 
-    variables {
-        engine = run.check_global_rds_cluster.engine
-        db_cluster_instance_class = run.check_global_rds_cluster.primary_instance_class
-        region = run.check_global_rds_cluster.primary_region
-        engine_version = run.check_global_rds_cluster.engine_version
-    }
+  variables {
+    engine                    = run.check_global_rds_cluster.engine
+    db_cluster_instance_class = run.check_global_rds_cluster.primary_instance_class
+    region                    = run.check_global_rds_cluster.primary_region
+    engine_version            = run.check_global_rds_cluster.engine_version
+  }
 
 }
 
 run "check_instance_class_is_valid_secondary" {
 
-    command = plan
+  command = plan
 
-    module {
-        source = "./tests/load"
-    }
+  module {
+    source = "./tests/load"
+  }
 
-    variables {
-        engine = run.check_global_rds_cluster.engine
-        db_cluster_instance_class = run.check_global_rds_cluster.primary_instance_class
-        region = run.check_global_rds_cluster.secondary_region
-        engine_version = run.check_global_rds_cluster.engine_version
-    }
+  variables {
+    engine                    = run.check_global_rds_cluster.engine
+    db_cluster_instance_class = run.check_global_rds_cluster.primary_instance_class
+    region                    = run.check_global_rds_cluster.secondary_region
+    engine_version            = run.check_global_rds_cluster.engine_version
+  }
 
 }
 

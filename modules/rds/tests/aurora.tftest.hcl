@@ -10,10 +10,10 @@
 
 # This test takes approximatel ~5 mins to run
 run "aurora_test" {
-    command = apply
+  command = apply
 
-    variables {
-        cluster_identifier = "test-cluster"
-        skip_final_snapshot = true
-    }
+  variables {
+    cluster_identifier  = "test-cluster"
+    skip_final_snapshot = true
+  }
 }

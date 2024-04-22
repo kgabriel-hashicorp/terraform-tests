@@ -2,8 +2,12 @@ formatter: "markdown" # this is required
 
 version: ""
 
+# header-from: ""
+# footer-from: ""
+
 recursive:
   enabled: false
+  path: modules
 
 sections:
   hide: []
@@ -15,7 +19,7 @@ sections:
 content: ""
 
 output:
-  file: README.md
+  file: ""
   mode: inject
   template: |-
     <!-- BEGIN_TF_DOCS -->
@@ -44,3 +48,4 @@ settings:
   required: true
   sensitive: true
   type: true
+  

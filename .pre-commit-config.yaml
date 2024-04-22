@@ -11,7 +11,7 @@
 #     rev: "v0.17.0"
 #     hooks:
 #       - id: terraform-docs-go
-#         args: ["--config", ".tfdocs-config.yml", "."]
+#         args: ["--config", ".docs/.tfdocs-config.yml", "."]
 
 
 repos:
@@ -19,11 +19,10 @@ repos:
   rev: v1.88.4 # Get the latest from: https://github.com/antonbabenko/pre-commit-terraform/releases
   hooks:
     - id: terraform_fmt
-    - id: terraform_docs
-      args:
-        - --args=--config=.docs/.tfdocs-config.yml
-    # - id: terraform_validate
-    # - id: terraform_tflint
-    #   args:
-    #     - --args=--config=__GIT_WORKING_DIR__/.tflint.hcl
-    #     - --args=--color
+#     - id: terraform_docs
+#       args:
+#         - --args=--config=.docs/.tfdocs-config.yml
+#     - id: terraform_validate
+#     # - id: terraform_tflint
+#     #   args:
+#     #     - --args=--config=__GIT_WORKING_DIR__/.tflint.hcl
